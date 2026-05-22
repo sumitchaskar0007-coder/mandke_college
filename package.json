@@ -1,0 +1,10 @@
+{
+  "name": "mandke-college-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "seed": "pnpm --filter server seed"
+  }
+}

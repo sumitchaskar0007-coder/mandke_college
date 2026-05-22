@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: theme("fontFamily.sans");
+    color: #1a1a2e;
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: theme("fontFamily.heading");
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Swiper testimonials — brand pagination */
+.testimonial-swiper .swiper-pagination-bullet {
+  background: #e0e4f0;
+  opacity: 1;
+}
+.testimonial-swiper .swiper-pagination-bullet-active {
+  background: #f57c00;
+  transform: scale(1.15);
+}

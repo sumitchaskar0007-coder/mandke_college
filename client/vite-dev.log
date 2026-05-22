@@ -1,0 +1,63 @@
+
+> client@1.0.0 dev
+> vite --host 127.0.0.1
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m541[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m4:23:13 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/HomePage.tsx[22m
+[2m4:23:13 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/HomePage.tsx[22m
+[2m4:23:36 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Marquee.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/context/AuthContext.js, /src/pages/admin/AdminDashboardPage.js, /src/components/layout/Footer.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Footer.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/ScrollToTop.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/WhatsAppButton.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/StickySupportDock.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/MarketingLayout.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/context/AuthContext.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminGate.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminLoginPage.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminDashboardPage.js[22m
+[2m4:24:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.js[22m
+[2m4:31:35 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/home/HomeGalleryGrid.tsx[22m
+[2m4:31:42 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/HomePage.tsx[22m
+[2m4:32:28 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/GalleryPage.tsx[22m
+[2m4:32:44 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/GalleryPage.tsx[22m
+[2m4:32:52 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/admin/AdminDashboardPage.tsx[22m
+[2m4:33:51 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/admin/AdminDashboardPage.tsx[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Marquee.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/context/AuthContext.js, /src/pages/admin/AdminDashboardPage.js, /src/components/layout/Footer.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Footer.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/ScrollToTop.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/WhatsAppButton.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/StickySupportDock.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/MarketingLayout.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/context/AuthContext.js[22m
+[2m4:54:22 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminGate.js[22m
+[2m4:54:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminLoginPage.js[22m
+[2m4:54:23 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminDashboardPage.js[22m
+[2m4:54:25 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.js[22m
+[2m4:54:36 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/home/HomeGalleryGrid.tsx[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Marquee.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/context/AuthContext.js, /src/pages/admin/AdminDashboardPage.js, /src/components/layout/Footer.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/Footer.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/ScrollToTop.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/WhatsAppButton.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/StickySupportDock.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/layout/MarketingLayout.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/context/AuthContext.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminGate.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminLoginPage.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/admin/AdminDashboardPage.js[22m
+[2m5:02:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.js[22m

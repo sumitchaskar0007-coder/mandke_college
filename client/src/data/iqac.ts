@@ -1,0 +1,34 @@
+export const IQAC_ITEMS = [
+  { title: "Internal Quality Assurance Cell", slug: "internal-quality-assurance-cell" },
+  { title: "IQAC Committee", slug: "iqac-committee" },
+  { title: "NAAC Accreditation Certificate", slug: "naac-accreditation-certificate" },
+  { title: "AQAR", slug: "aqar" },
+  { title: "IQAC Minutes & Action Reports", slug: "iqac-minutes-action-reports" },
+  { title: "NAAC SSR Document", slug: "naac-ssr-document" },
+  { title: "Important Affiliation Docs", slug: "important-affiliation-docs" },
+  { title: "UGC Undertaking", slug: "undertaking" },
+  { title: "Affiliation Letter B.Com", slug: "affiliation-letter-bcom" },
+  { title: "AISHE", slug: "aishe" },
+  { title: "RTI Statutory Declaration", slug: "rti-statutory-declaration" },
+  { title: "Code of Conduct", slug: "code-of-conduct" },
+  { title: "Institutional Distinctiveness", slug: "institutional-distinctiveness" },
+  { title: "Best Practices", slug: "best-practices" },
+] as const;
+
+export const IQAC_DESCRIPTIONS: Record<(typeof IQAC_ITEMS)[number]["slug"], string> = {
+  "internal-quality-assurance-cell":
+    "Quality assurance initiatives, academic planning, institutional review processes, and continuous improvement practices.",
+  "iqac-committee": "Committee structure, members, roles, and quality coordination responsibilities.",
+  "naac-accreditation-certificate": "Official NAAC accreditation certificate and related accreditation credentials.",
+  aqar: "Annual Quality Assurance Reports submitted as part of institutional quality documentation.",
+  "iqac-minutes-action-reports": "Meeting minutes, decisions, and action taken reports from IQAC proceedings.",
+  "naac-ssr-document": "Self Study Report documents prepared for NAAC assessment and accreditation.",
+  "important-affiliation-docs": "Important institutional affiliation, approval, and statutory documents.",
+  undertaking: "UGC undertaking documents and institutional declarations.",
+  "affiliation-letter-bcom": "B.Com affiliation letter and university approval records.",
+  aishe: "AISHE related institutional data and submissions.",
+  "rti-statutory-declaration": "RTI statutory declaration and public disclosure documents.",
+  "code-of-conduct": "Code of conduct for students, faculty, staff, and institutional stakeholders.",
+  "institutional-distinctiveness": "Distinctive institutional practices that define Mandke College's academic identity.",
+  "best-practices": "Best practices followed by the institution for quality enhancement and student development.",
+};

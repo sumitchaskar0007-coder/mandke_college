@@ -1,0 +1,14 @@
+C:\Users\raj\Desktop\Website\mandakeskill\server\src\config\db.ts:5
+  if (!uri) throw new Error("MONGODB_URI is required");
+                  ^
+
+
+Error: MONGODB_URI is required
+    at connectDB (C:\Users\raj\Desktop\Website\mandakeskill\server\src\config\db.ts:5:19)
+    at <anonymous> (C:\Users\raj\Desktop\Website\mandakeskill\server\src\index.ts:9:9)
+    at <anonymous> (C:\Users\raj\Desktop\Website\mandakeskill\server\src\index.ts:13:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v20.20.2

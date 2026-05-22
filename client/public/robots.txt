@@ -1,0 +1,40 @@
+# robots.txt for Mandke College Website
+# Allow search engine crawlers to index all content
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*?*
+Disallow: /*&*
+Allow: /*.js
+Allow: /*.css
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://mandkecollege.edu.in/sitemap.xml
+Sitemap: https://mandkecollege.edu.in/sitemap-index.xml
+
+# Crawl delay in seconds
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 1/10s
