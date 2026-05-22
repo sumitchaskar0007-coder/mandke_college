@@ -591,29 +591,6 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20 text-white md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-dark to-accent" />
-        <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(90deg,#fff_1px,transparent_1px),linear-gradient(#fff_1px,transparent_1px)] [background-size:34px_34px]" />
-        <div className="relative mx-auto max-w-4xl px-4 text-center">
-          <h2 className="font-heading text-3xl font-bold md:text-4xl">25 years of transforming lives</h2>
-          <p className="mt-6 text-lg text-white/90">2002 Founded - NAAC milestones - Digital campus - 2027 Silver Jubilee</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              to="/admissions"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-btn bg-white px-8 py-3.5 text-base font-bold text-primary shadow-lg"
-            >
-              Join the legacy
-            </Link>
-            <Link
-              to="/about"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-btn border-2 border-white px-8 py-3.5 text-base font-bold text-white"
-            >
-              Explore our story
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h2 className="font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">Ready to begin your journey?</h2>
