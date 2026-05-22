@@ -29,7 +29,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-primary text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-start gap-4">
@@ -40,20 +40,20 @@ export function Footer() {
             />
             <div>
               <p className="font-display text-lg font-semibold text-accent">Smt. Sudhatai Mandke College</p>
-              <p className="mt-2 text-sm text-slate-300">Your Goal | Our Mission - Better You</p>
+              <p className="mt-2 text-sm text-white/80">Your Goal | Our Mission - Better You</p>
             </div>
           </div>
-          <p className="mt-4 inline-block rounded-badge border border-amber-400/50 bg-black/20 px-3 py-1 text-xs text-amber-200">
+          <p className="mt-4 inline-block rounded-badge border border-amber-400/50 bg-white/10 px-3 py-1 text-xs text-amber-200">
             Celebrating 25 Years - 2002-2027
           </p>
-          <p className="mt-6 text-xs leading-relaxed text-slate-500">
+          <p className="mt-6 text-xs leading-relaxed text-white/65">
             Trusted by families across Pune for NAAC-accredited B.Com, SPPU affiliation, and a placement-focused culture.
           </p>
         </div>
 
         <div>
           <p className="font-semibold text-white">Quick links</p>
-          <ul className="mt-3 space-y-2 text-sm text-slate-300">
+          <ul className="mt-3 space-y-2 text-sm text-white/80">
             {quick.map((l) => (
               <li key={l.href}>
                 <Link to={l.href} className="hover:text-accent">
@@ -66,7 +66,7 @@ export function Footer() {
 
         <div>
           <p className="font-semibold text-white">Contact</p>
-          <address className="mt-3 space-y-2 text-sm not-italic text-slate-300">
+          <address className="mt-3 space-y-2 text-sm not-italic text-white/80">
             <p>
               47/8, Mandke Growth Centre, Paud Road,
               <br />
@@ -93,7 +93,7 @@ export function Footer() {
 
         <div>
           <p className="font-semibold text-white">Newsletter</p>
-          <p className="mt-2 text-sm text-slate-400">Get updates on admissions and events.</p>
+          <p className="mt-2 text-sm text-white/70">Get updates on admissions and events.</p>
           <form onSubmit={onNewsletter} className="mt-3 flex max-w-sm flex-col gap-2">
             <label htmlFor="newsletter-email" className="sr-only">
               Email
@@ -105,7 +105,7 @@ export function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email address"
-              className="min-h-[44px] rounded-btn border border-white/20 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="min-h-[44px] rounded-btn border border-white/25 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/45 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             />
             <button
               type="submit"
@@ -113,13 +113,13 @@ export function Footer() {
             >
               Subscribe
             </button>
-            {msg ? <p className="text-xs text-slate-400">{msg}</p> : null}
+            {msg ? <p className="text-xs text-white/70">{msg}</p> : null}
           </form>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-white/15">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Mandke College | NAAC Accredited | Affiliated to SPPU | Created by{" "}
             <a href="" target="_blank" rel="noreferrer" className="font-semibold text-accent hover:underline">
