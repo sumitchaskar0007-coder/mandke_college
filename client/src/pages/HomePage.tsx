@@ -120,6 +120,14 @@ const SITE = {
   },
 };
 
+function asArray<T>(value: unknown): T[] {
+  return Array.isArray(value) ? value : [];
+}
+
+function hasItems<T>(value: unknown): value is { items: T[] } {
+  return Boolean(value && typeof value === "object" && Array.isArray((value as { items?: unknown }).items));
+}
+
 function StatCard({ icon: Icon, label, target, suffix = "" }: { icon: LucideIcon; label: string; target: number; suffix?: string }) {
   const { ref, value } = useCounter(target);
   return (
@@ -213,15 +221,23 @@ export function HomePage() {
     queryFn: async () => (await api.get<ContentBlock[]>("/content/home")).data,
   });
 
-  const highlightsBlock = contentRows?.find((c) => c.section === "highlights")?.data as
+  const contentList = asArray<ContentBlock>(contentRows);
+  const testimonialsList = asArray<TestimonialRow>(testimonials);
+  const galleryList = asArray<GalleryItem>(gallery);
+  const galleryCategoryList = asArray<GalleryCategory>(galleryCategories);
+  const eventList = asArray<EventItem>(events);
+  const announcementList = hasItems<Announcement>(announcements) ? announcements.items : [];
+  const blogList = hasItems<BlogItem>(blogs) ? blogs.items : [];
+
+  const highlightsBlock = contentList.find((c) => c.section === "highlights")?.data as
     | { items?: { title: string; body: string }[] }
     | undefined;
   const highlights = highlightsBlock?.items?.length ? highlightsBlock.items : DEFAULT_HIGHLIGHTS;
   const s = stats || {};
   const placementDisplay = typeof s.placement === "number" ? Math.min(100, s.placement) : 95;
-  const visibleAnnouncements = announcements?.items?.length ? announcements.items : DEFAULT_ANNOUNCEMENTS;
-  const visibleEvents = events?.length ? events : DEFAULT_EVENTS;
-  const visibleBlogs = blogs?.items?.length ? blogs.items : DEFAULT_BLOGS;
+  const visibleAnnouncements = announcementList.length ? announcementList : DEFAULT_ANNOUNCEMENTS;
+  const visibleEvents = eventList.length ? eventList : DEFAULT_EVENTS;
+  const visibleBlogs = blogList.length ? blogList : DEFAULT_BLOGS;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -401,7 +417,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="mt-12">
-            <TestimonialsCarousel items={testimonials || []} />
+            <TestimonialsCarousel items={testimonialsList} />
           </div>
         </div>
       </section>
@@ -528,7 +544,7 @@ export function HomePage() {
           />
         </div>
         <div className="mt-12">
-          <HomeGalleryGrid items={gallery || []} categories={galleryCategories} />
+          <HomeGalleryGrid items={galleryList} categories={galleryCategoryList} />
         </div>
         <GallerySectionFooter />
       </section>
