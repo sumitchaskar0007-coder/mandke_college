@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { api } from "../api/client";
 import buildingImage from "../assets/images/building.png";
+import flyerImage from "../assets/images/flyer.jpeg";
+import radhikaImage from "../assets/images/radhika.png";
 import { useCounter } from "../hooks/useCounter";
 import { CourseCards } from "../components/home/CourseCards";
 import { PlacementsSection } from "../components/home/PlacementsSection";
@@ -32,6 +34,8 @@ type EventItem = { _id: string; title: string; date?: string; venue?: string; im
 type ContentBlock = { section: string; data: Record<string, unknown> };
 
 const HERO_IMAGE = buildingImage;
+const FLYER_IMAGE = flyerImage;
+const RADHIKA_IMAGE = radhikaImage;
 
 const DEFAULT_HIGHLIGHTS = [
   { title: "Building Competence & Mindset", body: "B.Com designed for practical skills, confidence, and industry readiness." },
@@ -106,10 +110,17 @@ const MISSION = [
   "To prepare students and faculty to achieve global competence, leadership, and lifelong learning.",
 ];
 
+const RADHIKA_PARAGRAPHS = [
+  "Radhika Mandke-Godbole is the Managing Director of Smt. Sudhatai Mandke College and has been associated with the institution since 2014.",
+  "With a student-centric and progressive approach to education, she has led several initiatives focused on holistic development, employability, and modernizing the learning environment.",
+  "She has played a key role in strengthening industry-oriented learning through Mandke Institute for Learning Employable Skills (MILES), creating a direct pipeline between courses and careers through practical, skill-based training and exposure.",
+  "A former professional tennis player, Radhika brings discipline, resilience, and performance-driven leadership to education management. Through her vision, Smt. Sudhatai Mandke College continues to grow as a future-focused institution committed to developing confident, skilled, and career-ready individuals.",
+];
+
 const SITE = {
   name: "Smt. Sudhatai Mandke College",
   legalName: "Mandke Human Happiness Foundation's Smt. Sudhatai Mandke College",
-  url: "https://mandkecollege.edu.in",
+  url: "https://mandkecollege.com",
   phone: "+91-99229-65506",
   email: "admissions.mandkecollege@gmail.com",
   address: {
@@ -386,6 +397,44 @@ export function HomePage() {
             <span>Building Competence & Mindset</span>
             <span>Admissions 2026-27 Open for B.Com FY/SY/TY - Apply Now!</span>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-8 md:py-12">
+        <div className="mx-auto max-w-6xl px-4">
+          <img
+            src={FLYER_IMAGE}
+            alt="Mandke College admissions flyer"
+            className="h-auto w-full rounded-btn border border-borderSoft shadow-card"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </section>
+
+      <section className="bg-section py-16 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <figure className="overflow-hidden rounded-btn border border-borderSoft bg-white shadow-lift">
+            <img
+              src={RADHIKA_IMAGE}
+              alt="Radhika Mandke-Godbole"
+              className="h-full max-h-[520px] w-full object-cover object-top"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <p className="text-sm font-bold uppercase tracking-widest text-accent">Leadership</p>
+            <h2 className="mt-2 font-heading text-3xl font-bold tracking-tight text-primary md:text-4xl">
+              Radhika Mandke-Godbole
+            </h2>
+            <p className="mt-2 text-lg font-semibold text-primary">Managing Director</p>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-textSecondary md:text-lg">
+              {RADHIKA_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 

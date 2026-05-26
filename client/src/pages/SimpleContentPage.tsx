@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import buildingImage from "../assets/images/building.png";
+import heroImage from "../assets/images/hero.png";
 
 export function SimpleContentPage({
   title,
@@ -66,10 +68,88 @@ export function ActivitiesPage() {
 }
 
 export function StakeholdersPage() {
+  const stakeholders = [
+    {
+      title: "Students",
+      image: heroImage,
+      imageLabel: "classroom2.jpg",
+      paragraphs: [
+        "Our Students are our pride and joy. We strive very hard each day to make them into self assured, confident and achievement oriented global citizens, who will collectively strive to make the society better.",
+        "Our teachers through various methods allow students to continuously learn and unlearn so that they get a world view which will help them realise their true and full potential.",
+        "The college encourages students to participate in academics, co-curricular activities, skill-building sessions, leadership opportunities, and campus initiatives that help them grow with confidence and responsibility.",
+      ],
+    },
+    {
+      title: "Parents",
+      image: buildingImage,
+      imageLabel: "parents.jpg",
+      paragraphs: [
+        "Parents are an important part of the whole academic process. They are unconditionally invested in the well-being and career growth of their ward.",
+        "Regular constructive interaction with the parents helps us to understand their aspirations for their ward, in turn helping us improve our processes for the benefit of the students.",
+        "Through open communication, counselling support, and timely academic updates, we work with parents as partners in shaping a positive and purposeful learning journey.",
+      ],
+    },
+    {
+      title: "Teachers & Staff",
+      image: buildingImage,
+      imageLabel: "Faculty.jpg",
+      paragraphs: [
+        "Teachers & Staff are the backbone of our College. We have been fortunate to have highly experienced, dedicated, sincere and enthusiastic teachers in our team.",
+        "Their sole aim is to mould students to be the best versions of themselves. For this the College aims to provide them with best working conditions and facilities.",
+        "Our faculty and staff support students through classroom teaching, mentoring, administrative guidance, examination support, activities, and a caring campus environment.",
+      ],
+    },
+  ];
+
   return (
-    <SimpleContentPage title="Stakeholders" subtitle="Students, parents, industry, and community engagement.">
-      <p>Forms, feedback channels, and stakeholder-specific communications can be linked here via CMS.</p>
-    </SimpleContentPage>
+    <>
+      <Helmet>
+        <title>Our Stakeholders - Mandke College</title>
+      </Helmet>
+      <section className="bg-gradient-to-br from-primary via-[#0b2556] to-accent py-16 text-white md:py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <p className="text-sm font-bold uppercase tracking-widest text-amber-300">Our Stakeholders</p>
+          <h1 className="mt-3 font-heading text-4xl font-bold md:text-5xl">Students, Parents, Teachers & Staff</h1>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
+            A strong institution grows through meaningful participation from students, parents, teachers, and staff.
+            Together, they shape a learning culture built on confidence, care, discipline, and progress.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-section py-14 md:py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="grid gap-8">
+            {stakeholders.map((stakeholder, index) => (
+              <article
+                key={stakeholder.title}
+                className="grid gap-6 rounded-btn border border-borderSoft bg-white p-5 shadow-card md:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
+              >
+                <figure className={`${index % 2 === 1 ? "lg:order-2" : ""} overflow-hidden rounded-btn border border-borderSoft bg-section`}>
+                  <img
+                    src={stakeholder.image}
+                    alt={stakeholder.title}
+                    className="h-64 w-full object-cover md:h-80"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption className="px-4 py-3 text-sm font-semibold text-textSecondary">{stakeholder.imageLabel}</figcaption>
+                </figure>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-widest text-accent">Stakeholder</p>
+                  <h2 className="mt-2 font-heading text-3xl font-bold text-primary">{stakeholder.title}</h2>
+                  <div className="mt-5 space-y-4 text-base leading-relaxed text-textSecondary md:text-lg">
+                    {stakeholder.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

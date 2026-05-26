@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { BookOpen, CheckCircle2, HeartHandshake, Target, Users } from "lucide-react";
 import buildingImage from "../assets/images/building.png";
+import founderImage from "../assets/images/founder.png";
+import radhikaImage from "../assets/images/radhika.png";
 
 const COLLEGE_PARAGRAPHS = [
   "Smt. Sudhatai Mandke College of Commerce was established in 2002 by the Mandke Human Happiness Foundation, Pune; by Shri. Sudhir Mandke, a leading promoter and builder of Pune. The college is affiliated to Savitribai Phule Pune University providing graduate degree in B.Com, approved by AICTE providing graduation in BCA & BBA and is also approved by the Govt. of Maharashtra.",
@@ -19,6 +21,20 @@ const FOREWORD_PARAGRAPHS = [
   "The qualified and dedicated team of faculty and administrative staff work hard each day to ensure that our students have an enriching and holistic learning experience. College assures to nurture students to help them enhance their skills and potential not only through academic learning, but also by participating in extracurricular activities. We ensure to inculcate entrepreneurial and leadership skills in our students.",
   "We believe that an institution like ours can sculpt students into well-rounded individuals ready to face the myriad of challenges with confidence and zest.",
   "We aspire to acquire excellence by way of introducing new areas of commerce education and providing support facilities to students.",
+];
+
+const FOUNDER_PARAGRAPHS = [
+  "Mandke Human Happiness Foundation (MHHF) is formed to serve the society, particularly in the field of need based education since education is the basis for development of an individual and in turn our society.",
+  "Education in India has undergone a fundamental change in terms of Academic & Practical knowledge. Considering this need of the hour, the Trust has decided to impart Quality education through revised curriculum giving equal stress on both Theoretical & Practical know-how, to students from Urban, Rural and International areas.",
+  "This will help create a highly trained workforce that will cater to the needs of modern businesses and industries. We are trying to generate or recognize that spark in our students for establishing themselves in self-employment as well.",
+  "To achieve this MHHF ensures you good resources, state of the art infrastructure, experienced faculty and a very conducive environment.",
+];
+
+const RADHIKA_PARAGRAPHS = [
+  "Radhika Mandke-Godbole is the Managing Director of Smt. Sudhatai Mandke College and has been associated with the institution since 2014.",
+  "With a student-centric and progressive approach to education, she has led several initiatives focused on holistic development, employability, and modernizing the learning environment.",
+  "She has played a key role in strengthening industry-oriented learning through Mandke Institute for Learning Employable Skills (MILES), creating a direct pipeline between courses and careers through practical, skill-based training and exposure.",
+  "A former professional tennis player, Radhika brings discipline, resilience, and performance-driven leadership to education management. Through her vision, Smt. Sudhatai Mandke College continues to grow as a future-focused institution committed to developing confident, skilled, and career-ready individuals.",
 ];
 
 const CORE_VALUES = [
@@ -64,7 +80,7 @@ export function AboutPage() {
           </div>
           <figure className="overflow-hidden rounded-btn border border-borderSoft bg-white shadow-lift">
             <img src={buildingImage} alt="Smt. Sudhatai Mandke College Growth Centre" className="h-full max-h-[420px] w-full object-cover" />
-            <figcaption className="px-4 py-3 text-sm font-semibold text-textSecondary">Growth Centre photo</figcaption>
+            <figcaption className="px-4 py-3 text-sm font-semibold text-textSecondary"></figcaption>
           </figure>
         </div>
       </section>
@@ -80,6 +96,44 @@ export function AboutPage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </TextBlock>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        <div className="grid gap-8 rounded-btn border border-borderSoft bg-white p-6 shadow-card md:p-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-widest text-accent">Founder's Message</p>
+            <h2 className="mt-2 font-heading text-3xl font-bold text-primary md:text-4xl">Sudhir Mandke</h2>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-textSecondary md:text-lg">
+              {FOUNDER_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-6 font-semibold text-primary">
+              <p>Shri. Sudhir Y Mandke</p>
+              <p>Founder / Chairman</p>
+            </div>
+          </div>
+          <figure className="overflow-hidden rounded-btn border border-borderSoft bg-section">
+            <img src={founderImage} alt="Shri. Sudhir Y Mandke" className="h-full min-h-[280px] w-full object-cover" />
+          </figure>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        <div className="grid gap-8 rounded-btn border border-borderSoft bg-white p-6 shadow-card md:p-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
+          <figure className="overflow-hidden rounded-btn border border-borderSoft bg-section">
+            <img src={radhikaImage} alt="Radhika Mandke-Godbole" className="h-full min-h-[320px] w-full object-cover object-top" />
+          </figure>
+          <div>
+            <p className="text-sm font-bold uppercase tracking-widest text-accent">Managing Director</p>
+            <h2 className="mt-2 font-heading text-3xl font-bold text-primary md:text-4xl">Radhika Mandke-Godbole</h2>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-textSecondary md:text-lg">
+              {RADHIKA_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <TextBlock title="Principal's Foreword" label="Dear Students">
         {FOREWORD_PARAGRAPHS.map((paragraph) => (

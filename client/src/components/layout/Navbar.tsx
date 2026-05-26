@@ -30,9 +30,14 @@ export function Navbar() {
             SMT. SUDHATAI MANDKE COLLEGE
           </span>
           <span className="mx-auto block max-w-[42rem] text-[9px] font-medium leading-snug text-textSecondary sm:text-xs">
-            B.Com affiliated to Savitribai Phule Pune University - ID No. PU/PN/ASC/178-2002
+            Affiliated to Savitribai Phule Pune University - ID No. PU/PN/ASC/178-2002
           </span>
-          <span className="block text-[9px] font-semibold leading-snug text-accent sm:text-xs">NAAC Accredited College</span>
+          <span className="block animate-blink text-[9px] font-bold leading-snug text-yellow-500 [text-shadow:0_0_10px_rgba(234,179,8,0.75)] sm:text-sm">
+            NAAC Accredited College
+          </span>
+          <span className="block animate-blink text-[9px] font-extrabold leading-snug text-yellow-500 [text-shadow:0_0_10px_rgba(234,179,8,0.75)] sm:text-sm">
+            20+ Years of Excellence in Education
+          </span>
         </Link>
 
         <div className="flex justify-end">
@@ -67,96 +72,92 @@ export function Navbar() {
       <div className="bg-primary">
         <div className="mx-auto max-w-7xl px-4">
           <nav className="hidden min-h-[44px] flex-wrap items-center justify-center gap-x-1 text-xs lg:flex">
-          {NAV_ITEMS.map((item) =>
-            item.dropdown ? (
-              <div key={item.to} className="group relative">
-                <NavLink
-                  to={item.to}
-                  className={({ isActive }) =>
-                    `inline-flex min-h-[44px] items-center gap-1 px-2.5 font-bold text-white transition hover:bg-white/10 ${
-                      isActive ? "bg-white/15" : ""
-                    }`
-                  }
-                >
-                  <span>{item.label}</span>
-                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
-                </NavLink>
-                <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 rounded-b-btn border border-borderSoft bg-white py-2 opacity-0 shadow-lift transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                  {item.dropdown.map((link) => (
-                    <Link
-                      key={link.to}
-                      to={link.to}
-                      className="block px-4 py-2.5 text-sm font-semibold text-textSecondary transition hover:bg-section hover:text-primary"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+            {NAV_ITEMS.map((item) =>
+              item.dropdown ? (
+                <div key={item.to} className="group relative">
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `inline-flex min-h-[44px] items-center gap-1 px-2.5 font-bold text-white transition hover:bg-white/10 ${isActive ? "bg-white/15" : ""
+                      }`
+                    }
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  </NavLink>
+                  <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 rounded-b-btn border border-borderSoft bg-white py-2 opacity-0 shadow-lift transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    {item.dropdown.map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        className="block px-4 py-2.5 text-sm font-semibold text-textSecondary transition hover:bg-section hover:text-primary"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  `inline-flex min-h-[44px] items-center gap-1 px-2.5 font-bold text-white transition hover:bg-white/10 ${
-                    isActive ? "bg-white/15" : ""
-                  }`
-                }
-              >
-                <span>{item.label}</span>
-                {item.label !== "Home" ? <ChevronDown className="h-4 w-4" aria-hidden="true" /> : null}
-              </NavLink>
-            )
-          )}
-        </nav>
-
-        <div
-          id="mobile-navigation"
-          className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out lg:hidden ${
-            open ? "max-h-[75vh] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <nav className="grid max-h-[65vh] gap-1 overflow-y-auto py-3">
-            {NAV_ITEMS.map((item) => (
-              <div key={item.to}>
+              ) : (
                 <NavLink
+                  key={item.to}
                   to={item.to}
-                  onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center justify-between rounded-btn px-4 py-3 text-sm font-bold transition ${
-                      isActive ? "bg-white text-primary" : "text-white hover:bg-white/10"
+                    `inline-flex min-h-[44px] items-center gap-1 px-2.5 font-bold text-white transition hover:bg-white/10 ${isActive ? "bg-white/15" : ""
                     }`
                   }
                 >
                   <span>{item.label}</span>
                   {item.label !== "Home" ? <ChevronDown className="h-4 w-4" aria-hidden="true" /> : null}
                 </NavLink>
-                {item.dropdown ? (
-                  <div className="ml-4 mt-1 grid gap-1 border-l border-white/20 pl-3">
-                    {item.dropdown.map((link) => (
-                      <Link
-                        key={link.to}
-                        to={link.to}
-                        onClick={() => setOpen(false)}
-                        className="rounded-btn px-3 py-2 text-xs font-semibold text-white/90 hover:bg-white/10"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ))}
-            <Link
-              to="/admissions"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex min-h-[44px] items-center justify-center rounded-btn bg-white px-5 py-2.5 text-sm font-bold text-primary shadow-md"
-            >
-              Apply Now
-            </Link>
+              )
+            )}
           </nav>
+
+          <div
+            id="mobile-navigation"
+            className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out lg:hidden ${open ? "max-h-[75vh] opacity-100" : "max-h-0 opacity-0"
+              }`}
+          >
+            <nav className="grid max-h-[65vh] gap-1 overflow-y-auto py-3">
+              {NAV_ITEMS.map((item) => (
+                <div key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center justify-between rounded-btn px-4 py-3 text-sm font-bold transition ${isActive ? "bg-white text-primary" : "text-white hover:bg-white/10"
+                      }`
+                    }
+                  >
+                    <span>{item.label}</span>
+                    {item.label !== "Home" ? <ChevronDown className="h-4 w-4" aria-hidden="true" /> : null}
+                  </NavLink>
+                  {item.dropdown ? (
+                    <div className="ml-4 mt-1 grid gap-1 border-l border-white/20 pl-3">
+                      {item.dropdown.map((link) => (
+                        <Link
+                          key={link.to}
+                          to={link.to}
+                          onClick={() => setOpen(false)}
+                          className="rounded-btn px-3 py-2 text-xs font-semibold text-white/90 hover:bg-white/10"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+              <Link
+                to="/admissions"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex min-h-[44px] items-center justify-center rounded-btn bg-white px-5 py-2.5 text-sm font-bold text-primary shadow-md"
+              >
+                Apply Now
+              </Link>
+            </nav>
+          </div>
         </div>
-      </div>
       </div>
     </header>
   );

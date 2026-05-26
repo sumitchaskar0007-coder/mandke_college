@@ -8,6 +8,8 @@ import { AdminDashboardPage } from "./pages/admin/AdminDashboardPage";
 const HomePage = lazy(() => import("./pages/HomePage").then((m) => ({ default: m.HomePage })));
 const AboutPage = lazy(() => import("./pages/AboutPage").then((m) => ({ default: m.AboutPage })));
 const CommercePage = lazy(() => import("./pages/CommercePage").then((m) => ({ default: m.CommercePage })));
+const BbaPage = lazy(() => import("./pages/BbaPage").then((m) => ({ default: m.BbaPage })));
+const BcaPage = lazy(() => import("./pages/BcaPage").then((m) => ({ default: m.BcaPage })));
 const ContactPage = lazy(() => import("./pages/ContactPage").then((m) => ({ default: m.ContactPage })));
 const AdmissionsPage = lazy(() => import("./pages/AdmissionsPage").then((m) => ({ default: m.AdmissionsPage })));
 const AnnouncementsPage = lazy(() => import("./pages/AnnouncementsPage").then((m) => ({ default: m.AnnouncementsPage })));
@@ -51,6 +53,8 @@ export default function App() {
           <Route path="/about/faculty" element={<AboutFacultyPage />} />
           <Route path="/about/:slug" element={<SectionContentPage />} />
           <Route path="/academics" element={<SectionContentPage />} />
+          <Route path="/academics/bba" element={<BbaPage />} />
+          <Route path="/academics/bca" element={<BcaPage />} />
           <Route path="/academics/:slug" element={<SectionContentPage />} />
           <Route path="/commerce" element={<CommercePage />} />
           <Route path="/distance-education" element={<Simple />} />

@@ -35,9 +35,14 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.25" },
+        },
       },
       animation: {
         marquee: "marquee 28s linear infinite",
+        blink: "blink 1s ease-in-out infinite",
       },
     }
   },
