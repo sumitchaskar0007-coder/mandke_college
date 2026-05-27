@@ -2,21 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import {
-  ArrowRight,
-  Award,
-  BookOpen,
-  Calendar,
-  CheckCircle2,
-  GraduationCap,
-  MapPin,
-  Newspaper,
-  Sparkles,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
+import { Award, BookOpen, Calendar, GraduationCap, Newspaper, Sparkles, Users, type LucideIcon } from "lucide-react";
 import { api } from "../api/client";
-import buildingImage from "../assets/images/building.png";
 import flyerImage from "../assets/images/flyer.jpeg";
 import radhikaImage from "../assets/images/radhika.png";
 import { useCounter } from "../hooks/useCounter";
@@ -33,7 +20,6 @@ type BlogItem = { _id: string; title: string; slug: string; excerpt?: string; ca
 type EventItem = { _id: string; title: string; date?: string; venue?: string; image?: string };
 type ContentBlock = { section: string; data: Record<string, unknown> };
 
-const HERO_IMAGE = buildingImage;
 const FLYER_IMAGE = flyerImage;
 const RADHIKA_IMAGE = radhikaImage;
 
@@ -191,6 +177,52 @@ function SectionHeader({
   );
 }
 
+function RoadmapInfographic() {
+  return (
+    <motion.figure
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="overflow-hidden rounded-btn bg-white p-2 shadow-sm md:p-4"
+    >
+      <img
+        src={FLYER_IMAGE}
+        alt="Mandke College roadmap flyer"
+        className="h-auto w-full rounded-btn object-contain"
+        loading="eager"
+        decoding="async"
+      />
+    </motion.figure>
+  );
+}
+
+function PlaceholderCards() {
+  const cards = [
+    "lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-2",
+    "lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-2",
+    "lg:col-start-1 lg:col-span-2 lg:row-start-5 lg:row-span-2",
+    "lg:col-start-3 lg:col-span-2 lg:row-start-2 lg:row-span-2",
+    "lg:col-start-5 lg:col-span-2 lg:row-start-3 lg:row-span-2",
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:min-h-[430px] lg:grid-cols-6 lg:grid-rows-6 lg:items-stretch"
+    >
+      {cards.map((layout, index) => (
+        <motion.div
+          key={index}
+          whileHover={{ y: -6, boxShadow: "0 18px 40px rgba(23,55,94,0.22)" }}
+          className={`min-h-[110px] rounded-btn bg-[#17375E] shadow-card transition ${layout}`}
+        />
+      ))}
+    </motion.div>
+  );
+}
+
 export function HomePage() {
   const { data: stats } = useQuery({
     queryKey: ["stats"],
@@ -284,106 +316,10 @@ export function HomePage() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      <section className="relative overflow-hidden bg-[#061735] text-white">
-        <img
-          src={HERO_IMAGE}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-100"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,23,53,0.82)_0%,rgba(10,35,82,0.58)_46%,rgba(6,23,53,0.18)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#061735] to-transparent" />
-
-        <div className="relative mx-auto grid min-h-[82vh] max-w-7xl gap-10 px-4 py-16 md:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div>
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 rounded-btn border border-white/20 bg-white/10 px-3 py-2 text-xs font-bold uppercase tracking-widest text-amber-200 backdrop-blur"
-            >
-              <Sparkles className="h-4 w-4" aria-hidden />
-              Admissions 2026-27 open
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.04 }}
-              className="mt-6 max-w-4xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
-            >
-              Your Goal.
-              <span className="block text-amber-300">Our Mission.</span>
-              <span className="block">Better You.</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.12 }}
-              className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-100 md:text-xl"
-            >
-              NAAC accredited, SPPU affiliated B.Com education in Kothrud, Pune, shaped around competence,
-              confidence, employability, and a values-led campus experience.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.18 }}
-              className="mt-9 flex flex-wrap gap-3"
-            >
-              <Link
-                to="/admissions"
-                className="inline-flex min-h-[50px] min-w-[160px] items-center justify-center gap-2 rounded-btn bg-accent px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-accent/30 transition hover:brightness-105"
-              >
-                Apply now <ArrowRight className="h-5 w-5" />
-              </Link>
-            </motion.div>
-            <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {["NAAC Accredited", "SPPU Affiliated", "Est. 2002", "Silver Jubilee 2027"].map((b) => (
-                <div key={b} className="rounded-btn border border-white/20 bg-white/10 px-3 py-3 text-sm font-semibold backdrop-blur">
-                  {b}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.22 }}
-            className="rounded-btn border border-white/20 bg-white/12 p-5 shadow-2xl backdrop-blur-md md:p-6"
-          >
-            <div className="grid gap-4">
-              <div className="rounded-btn bg-white p-5 text-textPrimary shadow-card">
-                <p className="text-xs font-bold uppercase tracking-widest text-accent">Focused programme</p>
-                <h2 className="mt-2 font-heading text-2xl font-bold text-primary">B.Com with career readiness</h2>
-                <p className="mt-3 text-sm leading-relaxed text-textSecondary">
-                  Commerce academics, skill labs, placement guidance, student mentoring, and campus activities in one
-                  structured pathway.
-                </p>
-                <div className="mt-5 grid gap-3 text-sm font-semibold text-primary">
-                  {["Admissions counselling", "Digital accounting exposure", "Mock interviews and CV clinics"].map((item) => (
-                    <span key={item} className="inline-flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-accent" aria-hidden />
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-btn border border-white/15 bg-[#0b2556]/80 p-4">
-                  <p className="font-heading text-3xl font-bold text-amber-300">{s.students ?? 5000}+</p>
-                  <p className="mt-1 text-xs font-medium text-slate-200">Students trained</p>
-                </div>
-                <div className="rounded-btn border border-white/15 bg-[#0b2556]/80 p-4">
-                  <p className="font-heading text-3xl font-bold text-amber-300">{s.years ?? 20}+</p>
-                  <p className="mt-1 text-xs font-medium text-slate-200">Years of excellence</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 rounded-btn border border-white/15 bg-[#0b2556]/80 p-4 text-sm text-slate-100">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" aria-hidden />
-                <span>Kothrud, Pune - next to Ideal Colony Metro Station</span>
-              </div>
-            </div>
-          </motion.div>
+      <section className="overflow-hidden bg-[#F5F5F5] py-10 text-textPrimary md:py-16">
+        <div className="mx-auto grid max-w-[82rem] gap-10 px-4 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
+          <RoadmapInfographic />
+          <PlaceholderCards />
         </div>
       </section>
 
@@ -397,18 +333,6 @@ export function HomePage() {
             <span>Building Competence & Mindset</span>
             <span>Admissions 2026-27 Open for B.Com FY/SY/TY - Apply Now!</span>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-8 md:py-12">
-        <div className="mx-auto max-w-6xl px-4">
-          <img
-            src={FLYER_IMAGE}
-            alt="Mandke College admissions flyer"
-            className="h-auto w-full rounded-btn border border-borderSoft shadow-card"
-            loading="eager"
-            decoding="async"
-          />
         </div>
       </section>
 

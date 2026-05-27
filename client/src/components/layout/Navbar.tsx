@@ -32,9 +32,6 @@ export function Navbar() {
           <span className="mx-auto block max-w-[42rem] text-[9px] font-medium leading-snug text-textSecondary sm:text-xs">
             Affiliated to Savitribai Phule Pune University - ID No. PU/PN/ASC/178-2002
           </span>
-          <span className="block animate-blink text-[9px] font-bold leading-snug text-yellow-500 [text-shadow:0_0_10px_rgba(234,179,8,0.75)] sm:text-sm">
-            NAAC Accredited College
-          </span>
           <span className="block animate-blink text-[9px] font-extrabold leading-snug text-yellow-500 [text-shadow:0_0_10px_rgba(234,179,8,0.75)] sm:text-sm">
             20+ Years of Excellence in Education
           </span>
@@ -50,9 +47,6 @@ export function Navbar() {
                 <p className="text-[11px] font-bold uppercase tracking-wide text-primary">NAAC Accredited</p>
                 <p className="text-[10px] font-semibold text-textSecondary">Credential</p>
               </div>
-            </div>
-            <div className="bg-amber-50 px-3 py-1.5 text-center">
-              <span className="font-heading text-lg font-extrabold leading-none text-accent">CGPA 3.1</span>
             </div>
           </div>
 
@@ -107,7 +101,6 @@ export function Navbar() {
                   }
                 >
                   <span>{item.label}</span>
-                  {item.label !== "Home" ? <ChevronDown className="h-4 w-4" aria-hidden="true" /> : null}
                 </NavLink>
               )
             )}
@@ -130,7 +123,6 @@ export function Navbar() {
                     }
                   >
                     <span>{item.label}</span>
-                    {item.label !== "Home" ? <ChevronDown className="h-4 w-4" aria-hidden="true" /> : null}
                   </NavLink>
                   {item.dropdown ? (
                     <div className="ml-4 mt-1 grid gap-1 border-l border-white/20 pl-3">
